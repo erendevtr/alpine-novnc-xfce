@@ -8,7 +8,7 @@ RUN apk add --no-cache \
     bash \
     python3 \
     git \
-    midori \
+    dillo \
     && git clone --depth 1 https://github.com /opt/noVNC \
     && git clone --depth 1 https://github.com /opt/noVNC/utils/websockify \
     && ln -s /opt/noVNC/vnc.html /opt/noVNC/index.html
