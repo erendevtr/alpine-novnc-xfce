@@ -8,17 +8,15 @@ RUN apk add --no-cache \
     bash \
     python3 \
     git \
-    && git clone https://github.com /opt/noVNC \
-    && git clone https://github.com /opt/noVNC/utils/websockify \
+    midori \
+    && git clone --depth 1 https://github.com /opt/noVNC \
+    && git clone --depth 1 https://github.com /opt/noVNC/utils/websockify \
     && ln -s /opt/noVNC/vnc.html /opt/noVNC/index.html
-
 
 EXPOSE 8080
 
-
 ENV DISPLAY=:1
 ENV RESOLUTION=1024x768x16
-
 
 CMD Xvfb :1 -screen 0 $RESOLUTION & \
     sleep 2 && \
